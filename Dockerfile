@@ -10,6 +10,10 @@ ENV GALAXY_CONFIG_BRAND Genome Annotation Suite
 
 WORKDIR /galaxy-central
 
+# Some basic packages
+RUN install-repository \
+    "--url http://toolshed.g2.bx.psu.edu/ -o iuc --name package_perl_5_18"
+
 # Install NCBI SimilaritySearch
 RUN install-repository \
     "--url https://toolshed.g2.bx.psu.edu/ -o devteam --name blast_datatypes" \
