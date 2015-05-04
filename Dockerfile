@@ -66,7 +66,8 @@ RUN install-repository \
     "--url http://toolshed.g2.bx.psu.edu/ -o devteam --name package_weblogo_3_3" \
     "--url http://toolshed.g2.bx.psu.edu/ -o devteam --name weblogo3 --panel-section-name Plotting" \
     "--url http://toolshed.g2.bx.psu.edu/ -o peterjc --name venn_list --panel-section-name Plotting" \
-    "--url http://toolshed.g2.bx.psu.edu/ -o peterjc --name mummer --panel-section-name Plotting"
+    "--url http://toolshed.g2.bx.psu.edu/ -o peterjc --name mummer --panel-section-name Plotting" \
+    "--url http://toolshed.g2.bx.psu.edu/ -o iuc --name jbrowse --panel-section-name Plotting"
 
 # Assembly tools
 RUN install-repository \
@@ -91,6 +92,7 @@ RUN install-repository \
     "--url http://toolshed.g2.bx.psu.edu/ -o bgruening --name find_three_genes_located_nearby_workflow" \
     "--url http://toolshed.g2.bx.psu.edu/ -o peterjc --name secreted_protein_workflow" \
     "--url http://toolshed.g2.bx.psu.edu/ -o peterjc --name rxlr_venn_workflow"
+
 
 
 # Mark folders as imported from the host.
