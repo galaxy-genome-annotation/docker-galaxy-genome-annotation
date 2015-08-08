@@ -36,8 +36,10 @@ RUN install-repository \
     "--url http://toolshed.g2.bx.psu.edu/ -o bgruening --name crt --panel-section-name CRISPER" \
     "--url http://toolshed.g2.bx.psu.edu/ -o bgruening --name minced --panel-section-name CRISPER" \
     "--url http://toolshed.g2.bx.psu.edu/ -o jjohnson --name cdhit --panel-section-name SequenceClustering" \
-    "--url http://toolshed.g2.bx.psu.edu/ -o clustalomega --name clustalomega --panel-section-name SequenceClustering" \
     "--url http://toolshed.g2.bx.psu.edu/ -o devteam --name clustalw --panel-section-name SequenceClustering"
+
+# Does not work  "--url http://toolshed.g2.bx.psu.edu/ -o clustalomega --name clustalomega --panel-section-name SequenceClustering"
+
 
 RUN install-repository \
     "--url http://toolshed.g2.bx.psu.edu/ -o peterjc --name clinod --panel-section-name Localisation" \
