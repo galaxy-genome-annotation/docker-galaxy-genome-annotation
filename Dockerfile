@@ -7,13 +7,15 @@ ENV GALAXY_CONFIG_BRAND=Apollo \
 WORKDIR /galaxy-central
 
 
-RUN install-repository \
-    "--url http://toolshed.g2.bx.psu.edu/     -o iuc         --name jbrowse --panel-section-id Apollo"
-
+RUN install-repository "--url https://toolshed.g2.bx.psu.edu/ -o iuc --name jbrowse --panel-section-name JBrowse"
 
 RUN git clone https://github.com/TAMU-CPT/galaxy-webapollo tools/apollo
 ADD tool_conf.xml /etc/config/apollo_tool_conf.xml
-ENV GALAXY_CONFIG_TOOL_CONFIG_FILE /galaxy-central/config/tool_conf.xml.sample,/etc/config/apollo_tool_conf.xml
+ENV GALAXY_CONFIG_TOOL_CONFIG_FILE /galaxy-central/config/tool_conf.xml.sample,/galaxy-central/config/shed_tool_conf.xml,/etc/config/apollo_tool_conf.xml
+# overwrite current welcome page
+ADD welcome.html $GALAXY_CONFIG_DIR/web/welcome.html
+ADD postinst.sh /bin/postinst
+RUN postinst
 
 # Mark folders as imported from the host.
 VOLUME ["/export/", "/data/", "/var/lib/docker"]
