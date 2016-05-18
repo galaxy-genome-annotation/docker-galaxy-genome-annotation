@@ -4,7 +4,6 @@ Galaxy Image for Annotation
 A complete and production ready Galaxy instance with installed BLAST+ tools.
 
  * [Installed tools](#installed-tools)
- * [Usage](#usage)
  * [Users & Passwords](#user--passowrds)
  * [Reproducibility of your search results](#reproducibility-of-your-search-results)
  * [Using large external BLAST databases](#using-large-external-blast-databases)
@@ -18,7 +17,7 @@ A complete and production ready Galaxy instance with installed BLAST+ tools.
 Installed tools
 ===============
 
- * [JBrowse-in-Galaxy](https://github.com/galaxyproject/tools-iuc/tree/master/tools/jbrowse
+ * [JBrowse-in-Galaxy](https://github.com/galaxyproject/tools-iuc/tree/master/tools/jbrowse)
  * [Apollo Webservices](https://github.com/TAMU-CPT/galaxy-webapollo)
 
 Users & Passwords
