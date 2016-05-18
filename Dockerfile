@@ -21,7 +21,7 @@ ADD postinst.sh /bin/postinst
 RUN postinst
 
 # Mark folders as imported from the host.
-VOLUME ["/export/", "/data/", "/var/lib/docker"]
+VOLUME ["/export/", "/apollo-data/", "/var/lib/docker"]
 
 EXPOSE :80
 
