@@ -19,7 +19,9 @@ ENV GALAXY_CONFIG_TOOL_CONFIG_FILE /galaxy-central/config/tool_conf.xml.sample,/
 # overwrite current welcome page
 ADD welcome.html $GALAXY_CONFIG_DIR/web/welcome.html
 ADD postinst.sh /bin/postinst
-RUN postinst
+RUN postinst && \
+    mkdir /apollo-data && \
+    chmod 777 /apollo-data
 
 # Mark folders as imported from the host.
 VOLUME ["/export/", "/apollo-data/", "/var/lib/docker"]
