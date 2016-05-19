@@ -9,11 +9,22 @@
     <div class="jumbotron">
         <div class="container">
             <table><tr><td>
-            <h2><strong>Dockerized Galaxy + Apollo</strong> is running!</h2>
+                        <h2><strong>Dockerized Galaxy + <a href="/apollo">Apollo</a></strong> is running!</h2>
             <br>
-                <p>
-            The default credentials for Apollo are <code>galaxy@gmod.org</code> and <code>admin</code>
-                </p>
+            <p>
+            To get started, upload a fasta genome, and some gff3 formatted
+            datasets. The <a href="/root?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fjbrowse%2Fjbrowse%2F0.4" target="_top">JBrowse</a>
+            tool will let you build up a Jbrowse instance which is viewable
+            inside of Galaxy.
+            </p>
+
+            <p>
+            Once you've done that, you'll need to <a href="/root?tool_id=edu.tamu.cpt2.webapollo.create_account" target="_top">
+            register an account</a> with Apollo. Finally, you can
+            <a href="/root?tool_id=edu.tamu.cpt2.webapollo.create_or_update" target="_top">
+            Create or Update</a> an organism will then let you push the
+            JBrowse instance into Apollo and associate it with an organism.
+            </p>
             </td><td>
                 <div align=center>
                     <img src="./welcome_image.png" width="90%" height="90%" />
