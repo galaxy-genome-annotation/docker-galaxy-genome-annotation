@@ -11,7 +11,7 @@ RUN install-repository "--url https://toolshed.g2.bx.psu.edu/ -o iuc --name jbro
 
 RUN git clone https://github.com/TAMU-CPT/galaxy-webapollo tools/apollo && \
     cd tools/apollo && \
-    git checkout aac5cf152ae6361ae036f0d660f3721ac016460e
+    git checkout 362e6904f83e12495486e06bb71677e4e9180120
 
 ADD tool_conf.xml /etc/config/apollo_tool_conf.xml
 ENV GALAXY_CONFIG_TOOL_CONFIG_FILE /galaxy-central/config/tool_conf.xml.sample,/galaxy-central/config/shed_tool_conf.xml,/etc/config/apollo_tool_conf.xml
