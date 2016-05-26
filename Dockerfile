@@ -19,7 +19,6 @@ VOLUME ["/export/", "/apollo-data/", "/var/lib/docker"]
 
 ADD postinst.sh /bin/postinst
 RUN postinst && \
-    mkdir /apollo-data && \
     chmod 777 /apollo-data
 
 RUN git clone https://github.com/TAMU-CPT/galaxy-webapollo tools/apollo && \
