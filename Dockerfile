@@ -17,14 +17,14 @@ ADD welcome.html $GALAXY_CONFIG_DIR/web/welcome.html
 # Mark folders as imported from the host.
 VOLUME ["/export/", "/apollo-data/", "/var/lib/docker"]
 
-RUN git clone https://github.com/TAMU-CPT/galaxy-webapollo tools/apollo && \
-    cd tools/apollo && \
-    git checkout 9cb4abd8ab35d206b8c7442c27960e1c618b0881
-
 ADD postinst.sh /bin/postinst
 RUN postinst && \
     mkdir /apollo-data && \
     chmod 777 /apollo-data
+
+RUN git clone https://github.com/TAMU-CPT/galaxy-webapollo tools/apollo && \
+    cd tools/apollo && \
+    git checkout 9cb4abd8ab35d206b8c7442c27960e1c618b0881
 
 # Autostart script that is invoked during container start
 CMD ["/usr/bin/startup"]
