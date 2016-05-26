@@ -1,17 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <toolbox monitor="true">
     <section id="apollo" name="Apollo">
-        <tool file="apollo/add_organism.xml" />
         <tool file="apollo/create_account.xml" />
-        <tool file="apollo/create_features_from_gff3.xml" />
         <tool file="apollo/create_or_update_organism.xml" />
         <tool file="apollo/export.xml" />
         <tool file="apollo/fetch_organism_jbrowse.xml" />
-        <tool file="apollo/find_organism.xml" />
-        <tool file="apollo/gff3_cleaner.xml" />
         <tool file="apollo/json2iframe.xml" />
         <tool file="apollo/list_organisms.xml" />
-        <tool file="apollo/renumber.xml" />
-        <tool file="apollo/update_organism.xml" />
     </section>
 </toolbox>
