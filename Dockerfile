@@ -21,7 +21,7 @@ ADD postinst.sh /bin/postinst
 RUN postinst && \
     chmod 777 /apollo-data
 
-RUN git clone https://github.com/TAMU-CPT/galaxy-webapollo tools/apollo && \
+RUN git clone https://github.com/TAMU-CPT/galaxy-apollo tools/apollo && \
     cd tools/apollo && \
     git checkout 434f182c2d6d4e96b213214abf3e58787657ae4a
 
