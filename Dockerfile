@@ -23,7 +23,7 @@ RUN postinst && \
 
 RUN git clone https://github.com/TAMU-CPT/galaxy-apollo tools/apollo && \
     cd tools/apollo && \
-    git checkout 434f182c2d6d4e96b213214abf3e58787657ae4a
+    git checkout 2f6589780d3b8344884e18f4c90d7495bd1f26b9
 
 # Autostart script that is invoked during container start
 CMD ["/usr/bin/startup"]
