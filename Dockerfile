@@ -23,7 +23,7 @@ RUN postinst && \
 
 RUN git clone https://github.com/TAMU-CPT/galaxy-apollo tools/apollo && \
     cd tools/apollo && \
-    git checkout fa27e828d817d4e1cb6f4cd17957e4ed3060645f
+    git checkout 4ac38d0b6dba1183f3e78eb5c224c7051064b4a5
 
 ADD fix_perms.sh /bin/fix_perms
 ADD fix_perms.conf /etc/supervisor/conf.d/apollo.conf
