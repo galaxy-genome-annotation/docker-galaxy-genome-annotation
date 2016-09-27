@@ -1,3 +1,5 @@
+**NB:** This image will be merged with the other one in this repository in the future. This image was created to demonstrate Apollo integration.
+
 Galaxy Image for Annotation
 ===========================
 
