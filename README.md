@@ -3,6 +3,10 @@
 Galaxy Image for Annotation
 ===========================
 
+```
+docker pull quay.io/erasche/docker-galaxy-annotation
+```
+
 A complete and production ready Galaxy instance with installed BLAST+ tools.
 
  * [Installed tools](#installed-tools)
