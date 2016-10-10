@@ -1,4 +1,4 @@
 #!/bin/bash
 
-. $GALAXY_VIRTUALENV/bin/activate
+. $GALAXY_VIRTUAL_ENV/bin/activate
 pip install bcbio-gff biopython
