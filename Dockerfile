@@ -33,10 +33,10 @@ RUN git clone https://github.com/galaxy-genome-annotation/galaxy-tools /tmp/gala
 ADD fix_perms.sh /bin/fix_perms
 ADD fix_perms.conf /etc/supervisor/conf.d/apollo.conf
 
-ENV GALAXY_WEBAPOLLO_URL http://apollo:8080/apollo
-ENV GALAXY_WEBAPOLLO_USER admin@local.host
-ENV GALAXY_WEBAPOLLO_PASSWORD password
-ENV GALAXY_WEBAPOLLO_EXT_URL /apollo
-ENV GALAXY_SHARED_DIR /apollo-data
-ENV GALAXY_JBROWSE_SHARED_DIR /jbrowse/data
-ENV GALAXY_JBROWSE_SHARED_URL /jbrowse
+ENV GALAXY_WEBAPOLLO_URL="http://apollo:8080/apollo" \
+    GALAXY_WEBAPOLLO_USER="admin@local.host" \
+    GALAXY_WEBAPOLLO_PASSWORD=password \
+    GALAXY_WEBAPOLLO_EXT_URL="/apollo" \
+    GALAXY_SHARED_DIR="/apollo-data" \
+    GALAXY_JBROWSE_SHARED_DIR="/jbrowse/data" \
+    GALAXY_JBROWSE_SHARED_URL="/jbrowse"
