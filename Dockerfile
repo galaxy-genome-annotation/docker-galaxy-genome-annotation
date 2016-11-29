@@ -1,11 +1,13 @@
 FROM bgruening/galaxy-stable
 MAINTAINER Eric Rasche <esr@tamu.edu>
 
-ENV GALAXY_CONFIG_BRAND=Apollo \
+ENV GALAXY_CONFIG_BRAND=Annotation \
     GALAXY_LOGGING=full
 
 WORKDIR /galaxy-central
 
+# install-repository sometimes needs to be forced into updating the repo
+ENV CACHE_BUST=1
 
 RUN install-repository "--url https://toolshed.g2.bx.psu.edu/ -o iuc --name jbrowse --panel-section-name JBrowse"
 
