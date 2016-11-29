@@ -25,6 +25,22 @@ Installed tools
 
  * [JBrowse-in-Galaxy](https://github.com/galaxyproject/tools-iuc/tree/master/tools/jbrowse)
  * [Apollo Webservices](https://github.com/TAMU-CPT/galaxy-webapollo)
+ * [Other specific tools](https://github.com/galaxy-genome-annotation/galaxy-tools)
+
+Environment variables
+=====================
+
+The following environment variables must be set:
+
+ENV                           | Use
+---                           | ---
+ `$GALAXY_WEBAPOLLO_URL`      | The URL at which Apollo is accessible, internal to Galaxy and where the tools run. Must be absolute, with FQDN and protocol. (default: http://apollo:8080/apollo)
+ `$GALAXY_WEBAPOLLO_USER`     | The admin user which Galaxy should use to talk to Apollo. (default: admin@local.host)
+ `$GALAXY_WEBAPOLLO_PASSWORD` | The password for the admin user. (default: password)
+ `$GALAXY_WEBAPOLLO_EXT_URL`  | The external URL at which Apollo is accessible to end users. May be relative or absolute. (default: /apollo)
+ `$GALAXY_SHARED_DIR`         | Directory shared between Galaxy and Apollo, used to exchange JBrowse instances. (default: /apollo-data)
+ `$GALAXY_JBROWSE_SHARED_DIR` | Directory shared between Galaxy and JBrowse, used to exchange JBrowse datasets. (default: /jbrowse/data)
+ `$GALAXY_JBROWSE_SHARED_URL` | The external URL at which JBrowse is accessible to end users. May be relative or absolute. (default: /jbrowse)
 
 Users & Passwords
 ================
@@ -78,4 +94,4 @@ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR 
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR
