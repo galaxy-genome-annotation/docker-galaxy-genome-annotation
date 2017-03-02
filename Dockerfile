@@ -26,7 +26,7 @@ RUN postinst && \
 
 RUN git clone https://github.com/TAMU-CPT/galaxy-apollo tools/apollo && \
     cd tools/apollo && \
-    git checkout 4ac38d0b6dba1183f3e78eb5c224c7051064b4a5
+    git checkout 29795b77c0d5c7894219b018a92c5ee7818096c3
 
 RUN git clone https://github.com/galaxy-genome-annotation/galaxy-tools /tmp/galaxy-tools/ && \
     cp -RT /tmp/galaxy-tools/tools/ tools/ && \
