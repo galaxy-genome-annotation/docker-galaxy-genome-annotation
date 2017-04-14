@@ -1,5 +1,5 @@
 FROM bgruening/galaxy-stable:17.01
-MAINTAINER Eric Rasche <esr@tamu.edu>
+MAINTAINER Galaxy Genome Annotation <gga@galaxians.org>
 
 WORKDIR /galaxy-central
 
@@ -28,9 +28,9 @@ RUN postinst && \
     chmod 777 /apollo-data && \
     chmod 777 /jbrowse/data
 
-RUN git clone https://github.com/TAMU-CPT/galaxy-apollo tools/apollo && \
+RUN git clone https://github.com/galaxy-genome-annotation/galaxy-apollo tools/apollo && \
     cd tools/apollo && \
-    git checkout 001673c59a82063c4f8cf1cbfa19f81fd3cfe16b
+    git checkout ce14e1d0d2be125b1fdf60701f02291ef7b1024d
 
 RUN git clone https://github.com/galaxy-genome-annotation/galaxy-tools /tmp/galaxy-tools/ && \
     cp -RT /tmp/galaxy-tools/tools/ tools/ && \
