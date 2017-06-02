@@ -117,14 +117,6 @@ tools:
   owner: nml
   tool_panel_section_label: "Assembly"
 
-- name: crt
-  owner: bgruening
-  tool_panel_section_label: "CRISPER"
-
-- name: minced
-  owner: bgruening
-  tool_panel_section_label: "CRISPER"
-
 - name: cdhit
   owner: jjohnson
   tool_panel_section_label: "Clustering"
