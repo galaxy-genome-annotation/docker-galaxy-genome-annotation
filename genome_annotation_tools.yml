@@ -49,9 +49,9 @@ tools:
   owner: peterjc
   tool_panel_section_label: "Similarity Search"
 
-- name: venn_list
-  owner: peterjc
-  tool_panel_section_label: "Visualisation"
+#- name: venn_list
+  #owner: peterjc
+  #tool_panel_section_label: "Visualisation"
 
 - name: mummer
   owner: peterjc
