@@ -7,6 +7,8 @@
 docker pull quay.io/galaxy/genome-annotation
 ```
 
+For running the complete GMOD stack (including Apollo, Tripal, Chado), please see [our other repository](https://github.com/galaxy-genome-annotation/dockerized-gmod-deployment)
+
 A complete and production ready Galaxy instance for Genome Annotation.
 
  * [Installed tools](#installed-tools)
