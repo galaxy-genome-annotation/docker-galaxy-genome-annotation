@@ -24,16 +24,13 @@ ENV GALAXY_CONFIG_TOOL_CONFIG_FILE /galaxy-central/config/tool_conf.xml.sample,/
 ADD welcome.html $GALAXY_CONFIG_DIR/web/welcome.html
 
 # Mark folders as imported from the host.
-VOLUME ["/export/", "/apollo-data/", "/jbrowse/data/", "/var/lib/docker"]
+VOLUME ["/export/", "/apollo-data/", "/jbrowse/data/", "/var/lib/docker", "/tripal-data/"]
 
 ADD postinst.sh /bin/postinst
 RUN postinst && \
     chmod 777 /apollo-data && \
-    chmod 777 /jbrowse/data
-
-RUN git clone https://github.com/galaxy-genome-annotation/galaxy-apollo tools/apollo && \
-    cd tools/apollo && \
-    git checkout ce14e1d0d2be125b1fdf60701f02291ef7b1024d
+    chmod 777 /jbrowse/data && \
+    chmod 777 /tripal-data
 
 RUN git clone https://github.com/galaxy-genome-annotation/galaxy-tools /tmp/galaxy-tools/ && \
     cp -RT /tmp/galaxy-tools/tools/ tools/ && \
@@ -48,4 +45,8 @@ ENV GALAXY_WEBAPOLLO_URL="http://apollo:8080/apollo" \
     GALAXY_WEBAPOLLO_EXT_URL="/apollo" \
     GALAXY_SHARED_DIR="/apollo-data" \
     GALAXY_JBROWSE_SHARED_DIR="/jbrowse/data" \
-    GALAXY_JBROWSE_SHARED_URL="/jbrowse"
+    GALAXY_JBROWSE_SHARED_URL="/jbrowse" \
+    GALAXY_TRIPAL_URL="http://tripal/tripal/" \
+    GALAXY_TRIPAL_USER="admin" \
+    GALAXY_TRIPAL_PASSWORD="changeme" \
+    GALAXY_TRIPAL_SHARED_DIR="/tripal-data"

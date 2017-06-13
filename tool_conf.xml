@@ -13,4 +13,18 @@
     <section id="jbrowse" name="JBrowse">
         <tool file="jbrowse/jbrowse_to_container.xml" />
     </section>
+    <section id="tripal" name="Tripal">
+        <tool file="tripal/create_analysis.xml" />
+        <tool file="tripal/create_organism.xml" />
+        <tool file="tripal/index.xml" />
+        <tool file="tripal/load_blast.xml" />
+        <tool file="tripal/load_fasta.xml" />
+        <tool file="tripal/load_gff3.xml" />
+        <tool file="tripal/load_go.xml" />
+        <tool file="tripal/load_interpro.xml" />
+        <tool file="tripal/populate_mview.xml" />
+        <tool file="tripal/sync_analysis.xml" />
+        <tool file="tripal/sync_features.xml" />
+        <tool file="tripal/sync_organism.xml" />
+    </section>
 </toolbox>
