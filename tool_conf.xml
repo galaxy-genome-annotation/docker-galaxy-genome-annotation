@@ -10,7 +10,7 @@
         <tool file="apollo/json2iframe.xml" />
         <tool file="apollo/list_organisms.xml" />
     </section>
-    <section id="jbrowse" name="JBrowse">
+    <section id="visualisation" name="Visualisation">
         <tool file="jbrowse/jbrowse_to_container.xml" />
     </section>
     <section id="tripal" name="Tripal">
