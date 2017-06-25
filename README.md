@@ -75,6 +75,11 @@ ENV                           | Use
  `$GALAXY_SHARED_DIR`         | Directory shared between Galaxy and Apollo, used to exchange JBrowse instances. (default: /apollo-data)
  `$GALAXY_JBROWSE_SHARED_DIR` | Directory shared between Galaxy and JBrowse, used to exchange JBrowse datasets. (default: /jbrowse/data)
  `$GALAXY_JBROWSE_SHARED_URL` | The external URL at which JBrowse is accessible to end users. May be relative or absolute. (default: /jbrowse)
+ `$GALAXY_TRIPAL_URL`         | The URL at which Tripal is accessible, internal to Galaxy and where the tools run. Must be absolute, with FQDN and protocol. (default: http://tripal/tripal/)
+ `$GALAXY_TRIPAL_USER`        | The admin user which Galaxy should use to talk to Tripal. (default: admin)
+ `$GALAXY_TRIPAL_PASSWORD`    | The password for the tripal admin user. (default: changeme)
+ `$GALAXY_TRIPAL_SHARED_DIR`  | Directory shared between Galaxy and Tripal, used to exchange Tripal datasets. (default: /tripal-data)
+ `$ENABLE_FIX_PERMS`          | Set this to 1 to let the container ensure that $GALAXY_SHARED_DIR, $GALAXY_JBROWSE_SHARED_DIR and $GALAXY_TRIPAL_SHARED_DIR are constantly world writable (chmod -R 777) (default: 1)
 
 ## Users & Passwords
 
