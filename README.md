@@ -47,6 +47,8 @@ A complete and production ready Galaxy instance for Genome Annotation.
 	* [JBrowse-in-Galaxy Extras](https://github.com/galaxy-genome-annotation/galaxy-tools/tree/master/tools/jbrowse)
 	* [Tripal Admin](https://github.com/galaxy-genome-annotation/galaxy-tools/tree/master/tools/tripal)
 	* Circos
+* Automatic annotation
+    * Prokka
 
 ## Usage
 

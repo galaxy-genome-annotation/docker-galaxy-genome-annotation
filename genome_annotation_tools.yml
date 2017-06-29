@@ -134,3 +134,10 @@ tools:
   owner: eric-rasche
   tool_panel_section_label: "Visualisation"
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu
+  
+- name: prokka
+  install_resolver_dependencies: true
+  install_tool_dependencies: true
+  owner: crs4
+  tool_panel_section_label: "Automatic Annotation"
+  tool_shed_url: https://testtoolshed.g2.bx.psu.edu
