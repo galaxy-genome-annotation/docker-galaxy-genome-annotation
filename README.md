@@ -53,7 +53,7 @@ A complete and production ready Galaxy instance for Genome Annotation.
 You must have [docker installed](https://docs.docker.com/installation/). Once that is available, it is as simple as:
 
 ```bash
-docker run -d -p 8080:80 galaxy/genome-annotation
+docker run -d -p 8080:80 quay.io/galaxy/genome-annotation
 ```
 
 Please consult the  [docker manual](http://docs.docker.io/) for detailed
