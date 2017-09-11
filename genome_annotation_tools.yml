@@ -78,11 +78,8 @@ tools:
   tool_panel_section_label: "Visualisation"
 
 - name: jbrowse
-  install_resolver_dependencies: true
-  install_tool_dependencies: true
   owner: iuc
   tool_panel_section_label: "Visualisation"
-  tool_shed_url: https://testtoolshed.g2.bx.psu.edu
 
 - name: emboss_5
   owner: devteam
@@ -132,7 +129,23 @@ tools:
   owner: eric-rasche
   tool_panel_section_label: "Visualisation"
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu
-  
+
 - name: prokka
   owner: crs4
   tool_panel_section_label: "Automatic Annotation"
+
+- name: suite_apollo
+  owner: gga
+  tool_panel_section_label: "Apollo"
+
+- name: jbrowse_to_container
+  owner: gga
+  tool_panel_section_label: "Visualisation"
+
+- name: suite_tripal
+  owner: gga
+  tool_panel_section_label: "Tripal"
+
+- name: suite_askomics
+  owner: gga
+  tool_panel_section_label: "Askomics"

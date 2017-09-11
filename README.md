@@ -81,6 +81,7 @@ ENV                           | Use
  `$GALAXY_TRIPAL_USER`        | The admin user which Galaxy should use to talk to Tripal. (default: admin)
  `$GALAXY_TRIPAL_PASSWORD`    | The password for the tripal admin user. (default: changeme)
  `$GALAXY_TRIPAL_SHARED_DIR`  | Directory shared between Galaxy and Tripal, used to exchange Tripal datasets. (default: /tripal-data)
+ `$ASKOMICS_URL`              | The URL of a default AskOmics server. Users can override it in tool forms. (default: none)
  `$ENABLE_FIX_PERMS`          | Set this to 1 to let the container ensure that $GALAXY_SHARED_DIR, $GALAXY_JBROWSE_SHARED_DIR and $GALAXY_TRIPAL_SHARED_DIR are constantly world writable (chmod -R 777) (default: 1)
 
 ## Users & Passwords
