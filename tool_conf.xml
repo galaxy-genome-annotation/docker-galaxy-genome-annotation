@@ -1,30 +1,3 @@
 <?xml version='1.0' encoding='utf-8'?>
 <toolbox monitor="true">
-    <section id="apollo" name="Apollo">
-        <tool file="apollo/create_features_from_gff3.xml" />
-        <tool file="apollo/create_or_update_organism.xml" />
-        <tool file="apollo/delete_features.xml" />
-        <tool file="apollo/delete_organism.xml" />
-        <tool file="apollo/export.xml" />
-        <tool file="apollo/fetch_organism_jbrowse.xml" />
-        <tool file="apollo/json2iframe.xml" />
-        <tool file="apollo/list_organisms.xml" />
-    </section>
-    <section id="visualisation" name="Visualisation">
-        <tool file="jbrowse/jbrowse_to_container.xml" />
-    </section>
-    <section id="tripal" name="Tripal">
-        <tool file="tripal/create_analysis.xml" />
-        <tool file="tripal/create_organism.xml" />
-        <tool file="tripal/index.xml" />
-        <tool file="tripal/load_blast.xml" />
-        <tool file="tripal/load_fasta.xml" />
-        <tool file="tripal/load_gff3.xml" />
-        <tool file="tripal/load_go.xml" />
-        <tool file="tripal/load_interpro.xml" />
-        <tool file="tripal/populate_mview.xml" />
-        <tool file="tripal/sync_analysis.xml" />
-        <tool file="tripal/sync_features.xml" />
-        <tool file="tripal/sync_organism.xml" />
-    </section>
 </toolbox>

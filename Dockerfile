@@ -11,30 +11,35 @@ ENV GALAXY_CONFIG_CONDA_AUTO_INSTALL=True \
 	ENABLE_TTS_INSTALL=True \
 	GALAXY_CONFIG_BRAND="Genome Annotation"
 
+# Install required python packages before installing tools from toolshed
+ADD postinst.sh /bin/postinst
+RUN postinst
+
 # Install tools
 COPY genome_annotation_tools.yml $GALAXY_ROOT/tools.yaml
+COPY genome_annotation_tools_2.yml $GALAXY_ROOT/tools_2.yaml
 
 RUN install-tools $GALAXY_ROOT/tools.yaml && \
-    /tool_deps/_conda/bin/conda clean --tarballs
+    /tool_deps/_conda/bin/conda clean --tarballs --yes > /dev/null && \
+    rm /export/galaxy-central/ -rf
 
+# Split into two layers, it seems that there is a max-layer size.
+RUN install-tools $GALAXY_ROOT/tools_2.yaml && \
+    /tool_deps/_conda/bin/conda clean --tarballs --yes > /dev/null && \
+    rm /export/galaxy-central/ -rf
 
-ADD tool_conf.xml /etc/config/apollo_tool_conf.xml
-ENV GALAXY_CONFIG_TOOL_CONFIG_FILE /galaxy-central/config/tool_conf.xml.sample,/galaxy-central/config/shed_tool_conf.xml,/etc/config/apollo_tool_conf.xml
+ADD tool_conf.xml /etc/config/gga_tool_conf.xml
+ENV GALAXY_CONFIG_TOOL_CONFIG_FILE /galaxy-central/config/tool_conf.xml.sample,/galaxy-central/config/shed_tool_conf.xml,/etc/config/gga_tool_conf.xml
 # overwrite current welcome page
 ADD welcome.html $GALAXY_CONFIG_DIR/web/welcome.html
 
-# Mark folders as imported from the host.
-VOLUME ["/export/", "/apollo-data/", "/jbrowse/data/", "/var/lib/docker", "/tripal-data/"]
-
-ADD postinst.sh /bin/postinst
-RUN postinst && \
+RUN mkdir -p /apollo-data /jbrowse/data /tripal-data && \
     chmod 777 /apollo-data && \
     chmod 777 /jbrowse/data && \
     chmod 777 /tripal-data
 
-RUN git clone https://github.com/galaxy-genome-annotation/galaxy-tools /tmp/galaxy-tools/ && \
-    cp -RT /tmp/galaxy-tools/tools/ tools/ && \
-    rm -rf /tmp/galaxy-tools/
+# Mark folders as imported from the host.
+VOLUME ["/export/", "/apollo-data/", "/jbrowse/data/", "/var/lib/docker", "/tripal-data/"]
 
 ADD fix_perms.sh /bin/fix_perms
 ADD fix_perms.conf /etc/supervisor/conf.d/apollo.conf
