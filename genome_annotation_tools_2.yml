@@ -41,86 +41,27 @@ galaxy_instance: http://localhost:8080
 install_resolver_dependencies: True
 install_tool_dependencies: False
 tools:
-- name: blastxml_to_top_descr
-  owner: peterjc
-  tool_panel_section_label: "Similarity Search"
+- name: circos
+  owner: eric-rasche
+  tool_panel_section_label: "Visualisation"
+  tool_shed_url: https://testtoolshed.g2.bx.psu.edu
 
-- name: blast_rbh
-  owner: peterjc
-  tool_panel_section_label: "Similarity Search"
+- name: prokka
+  owner: crs4
+  tool_panel_section_label: "Automatic Annotation"
 
-#- name: venn_list
-  #owner: peterjc
-  #tool_panel_section_label: "Visualisation"
+- name: suite_apollo
+  owner: gga
+  tool_panel_section_label: "Apollo"
 
-- name: mummer
-  owner: peterjc
-  tool_panel_section_label: "Alignments"
-
-- name: mira4_assembler
-  owner: peterjc
-  tool_panel_section_label: "Assembly"
-
-- name: clinod
-  owner: peterjc
-  tool_panel_section_label: "Localisation"
-
-- name: effectivet3
-  owner: peterjc
-  tool_panel_section_label: "Classification"
-
-- name: nlstradamus
-  owner: peterjc
-  tool_panel_section_label: "Classification"
-
-- name: weblogo3
-  owner: devteam
+- name: jbrowse_to_container
+  owner: gga
   tool_panel_section_label: "Visualisation"
 
-- name: jbrowse
-  owner: iuc
-  tool_panel_section_label: "Visualisation"
+- name: suite_tripal
+  owner: gga
+  tool_panel_section_label: "Tripal"
 
-- name: emboss_5
-  owner: devteam
-  tool_panel_section_label: "EMBOSS"
-
-- name: ncbi_blast_plus
-  owner: devteam
-  tool_panel_section_label: "Similarity Search"
-
-- name: diamond
-  owner: bgruening
-  tool_panel_section_label: "Similarity Search"
-
-- name: data_manager_diamond_database_builder
-  owner: bgruening
-  tool_panel_section_label: "Similarity Search"
-
-- name: augustus
-  owner: bgruening
-  tool_panel_section_label: "Gene Prediction"
-
-- name: glimmer3
-  owner: bgruening
-  tool_panel_section_label: "Gene Prediction"
-
-- name: spades
-  owner: nml
-  tool_panel_section_label: "Assembly"
-
-- name: rnaspades
-  owner: iuc
-  tool_panel_section_label: "Assembly"
-
-- name: metaspades
-  owner: nml
-  tool_panel_section_label: "Assembly"
-
-- name: cdhit
-  owner: jjohnson
-  tool_panel_section_label: "Clustering"
-
-- name: clustalw
-  owner: devteam
-  tool_panel_section_label: "Clustering"
+- name: suite_askomics
+  owner: gga
+  tool_panel_section_label: "Askomics"

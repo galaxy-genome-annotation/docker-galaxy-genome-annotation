@@ -17,10 +17,16 @@ RUN postinst
 
 # Install tools
 COPY genome_annotation_tools.yml $GALAXY_ROOT/tools.yaml
+COPY genome_annotation_tools_2.yml $GALAXY_ROOT/tools_2.yaml
 
 RUN install-tools $GALAXY_ROOT/tools.yaml && \
-    /tool_deps/_conda/bin/conda clean --tarballs
+    /tool_deps/_conda/bin/conda clean --tarballs --yes > /dev/null && \
+    rm /export/galaxy-central/ -rf
 
+# Split into two layers, it seems that there is a max-layer size.
+RUN install-tools $GALAXY_ROOT/tools_2.yaml && \
+    /tool_deps/_conda/bin/conda clean --tarballs --yes > /dev/null && \
+    rm /export/galaxy-central/ -rf
 
 ADD tool_conf.xml /etc/config/gga_tool_conf.xml
 ENV GALAXY_CONFIG_TOOL_CONFIG_FILE /galaxy-central/config/tool_conf.xml.sample,/galaxy-central/config/shed_tool_conf.xml,/etc/config/gga_tool_conf.xml
