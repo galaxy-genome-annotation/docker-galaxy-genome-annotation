@@ -65,4 +65,19 @@ tools:
 - name: suite_askomics
   owner: gga
   tool_panel_section_label: "Askomics"
-  
+
+- name: suite_maker
+  owner: iuc
+  tool_panel_section_label: "Gene Prediction"
+
+- name: suite_snap
+  owner: iuc
+  tool_panel_section_label: "Gene Prediction"
+
+- name: busco
+  owner: iuc
+  tool_panel_section_label: "Similarity Search"
+
+- name: data_manager_fetch_busco
+  owner: iuc
+  tool_panel_section_label: "Similarity Search"
