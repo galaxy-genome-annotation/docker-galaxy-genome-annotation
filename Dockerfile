@@ -1,5 +1,5 @@
 # Galaxy - Genome Annotation Suite
-FROM bgruening/galaxy-sequence-tools:17.05
+FROM bgruening/galaxy-sequence-tools:17.09
 MAINTAINER Galaxy Genome Annotation <gga@galaxians.org>
 
 WORKDIR /galaxy-central
