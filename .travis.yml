@@ -16,7 +16,8 @@ before_install:
   - rm -rf /home/travis/perl5/ /home/travis/.phpenv /home/travis/gopath /home/travis/otp /home/travis/.gimme/ /home/travis/.rvm /home/travis/.nvm
   - wget https://raw.githubusercontent.com/bgruening/galaxy-flavor-testing/master/Makefile
   - make docker_install
-  - travis_wait 45 make docker_build
+  - while sleep 9m; do echo "[TRAVIS] Still running..."; done &
+  - make docker_build
   - make docker_run
   - sleep 300
 
