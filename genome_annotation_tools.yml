@@ -120,7 +120,3 @@ tools:
 - name: cdhit
   owner: jjohnson
   tool_panel_section_label: "Clustering"
-
-- name: clustalw
-  owner: devteam
-  tool_panel_section_label: "Clustering"
