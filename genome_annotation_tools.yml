@@ -73,9 +73,9 @@ tools:
   owner: peterjc
   tool_panel_section_label: "Classification"
 
-- name: weblogo3
-  owner: devteam
-  tool_panel_section_label: "Visualisation"
+#- name: weblogo3
+  #owner: devteam
+  #tool_panel_section_label: "Visualisation"
 
 - name: jbrowse
   owner: iuc
@@ -101,9 +101,9 @@ tools:
   owner: bgruening
   tool_panel_section_label: "Gene Prediction"
 
-- name: glimmer3
-  owner: bgruening
-  tool_panel_section_label: "Gene Prediction"
+#- name: glimmer3
+  #owner: bgruening
+  #tool_panel_section_label: "Gene Prediction"
 
 - name: spades
   owner: nml
