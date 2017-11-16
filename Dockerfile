@@ -20,6 +20,8 @@ COPY genome_annotation_tools.yml $GALAXY_ROOT/tools.yaml
 COPY genome_annotation_tools_2.yml $GALAXY_ROOT/tools_2.yaml
 COPY tool_conf.xml /etc/config/gga_tool_conf.xml
 
+COPY install_tools_wrapper.sh /usr/bin/install-tools
+
 RUN install-tools $GALAXY_ROOT/tools.yaml && \
     /tool_deps/_conda/bin/conda clean --tarballs --yes > /dev/null && \
     rm /export/galaxy-central/ -rf
