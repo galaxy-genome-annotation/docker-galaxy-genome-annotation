@@ -101,7 +101,7 @@ tools:
   owner: bgruening
   tool_panel_section_label: "Gene Prediction"
 
-- name: glimmer3
+- name: suite_glimmer
   owner: bgruening
   tool_panel_section_label: "Gene Prediction"
 

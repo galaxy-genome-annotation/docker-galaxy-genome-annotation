@@ -22,12 +22,12 @@ COPY tool_conf.xml /etc/config/gga_tool_conf.xml
 
 COPY install_tools_wrapper.sh /usr/bin/install-tools
 
-RUN install-tools $GALAXY_ROOT/tools.yaml && \
+RUN install-tools $GALAXY_ROOT/tools.yaml -v && \
     /tool_deps/_conda/bin/conda clean --tarballs --yes > /dev/null && \
     rm /export/galaxy-central/ -rf
 
 # Split into two layers, it seems that there is a max-layer size.
-RUN install-tools $GALAXY_ROOT/tools_2.yaml && \
+RUN install-tools $GALAXY_ROOT/tools_2.yaml -v && \
     /tool_deps/_conda/bin/conda clean --tarballs --yes > /dev/null && \
     rm /export/galaxy-central/ -rf
 
