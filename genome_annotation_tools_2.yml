@@ -42,9 +42,8 @@ install_resolver_dependencies: True
 install_tool_dependencies: False
 tools:
 - name: circos
-  owner: eric-rasche
+  owner: iuc
   tool_panel_section_label: "Visualisation"
-  tool_shed_url: https://testtoolshed.g2.bx.psu.edu
 
 - name: prokka
   owner: crs4
