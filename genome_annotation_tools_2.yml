@@ -41,14 +41,6 @@ galaxy_instance: http://localhost:8080
 install_resolver_dependencies: True
 install_tool_dependencies: False
 tools:
-- name: suite_maker
-  owner: iuc
-  tool_panel_section_label: "Gene Prediction"
-
-- name: busco
-  owner: iuc
-  tool_panel_section_label: "Similarity Search"
-
 - name: circos
   owner: iuc
   tool_panel_section_label: "Visualisation"
@@ -73,9 +65,17 @@ tools:
   owner: gga
   tool_panel_section_label: "Askomics"
 
+- name: suite_maker
+  owner: iuc
+  tool_panel_section_label: "Gene Prediction"
+
 - name: suite_snap
   owner: iuc
   tool_panel_section_label: "Gene Prediction"
+
+- name: busco
+  owner: iuc
+  tool_panel_section_label: "Similarity Search"
 
 - name: data_manager_fetch_busco
   owner: iuc
