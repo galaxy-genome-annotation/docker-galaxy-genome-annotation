@@ -7,7 +7,6 @@ WORKDIR /galaxy-central
 # install-repository sometimes needs to be forced into updating the repo
 ENV GALAXY_CONFIG_CONDA_AUTO_INSTALL=True \
 	GALAXY_CONFIG_CONDA_AUTO_INIT=True \
-	GALAXY_CONFIG_USE_CACHED_DEPENDENCY_MANAGER=True \
 	ENABLE_TTS_INSTALL=True \
 	GALAXY_CONFIG_BRAND="Genome Annotation"
 
@@ -16,6 +15,7 @@ ADD postinst.sh /bin/postinst
 RUN postinst
 
 # Install tools
+RUN /export/tool_deps/_conda/bin/conda create -y --override-channels --channel iuc --channel bioconda --channel conda-forge --channel defaults --channel r --name __maker@2.31.9 maker=2.31.9
 COPY genome_annotation_tools.yml $GALAXY_ROOT/tools.yaml
 COPY genome_annotation_tools_2.yml $GALAXY_ROOT/tools_2.yaml
 COPY tool_conf.xml /etc/config/gga_tool_conf.xml
