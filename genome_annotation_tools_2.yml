@@ -41,10 +41,6 @@ galaxy_instance: http://localhost:8080
 install_resolver_dependencies: True
 install_tool_dependencies: False
 tools:
-- name: data_manager_fetch_busco
-  owner: iuc
-  tool_panel_section_label: "Similarity Search"
-
 - name: circos
   owner: iuc
   tool_panel_section_label: "Visualisation"
