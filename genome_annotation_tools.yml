@@ -124,3 +124,7 @@ tools:
 - name: clustalw
   owner: devteam
   tool_panel_section_label: "Clustering"
+
+- name: busco
+  owner: iuc
+  tool_panel_section_label: "Similarity Search"
