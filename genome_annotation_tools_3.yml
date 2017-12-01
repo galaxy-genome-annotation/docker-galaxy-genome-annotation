@@ -45,6 +45,6 @@ tools:
   owner: iuc
   tool_panel_section_label: "Similarity Search"
 
-- name: data_manager_fetch_busco
+- name: suite_snap
   owner: iuc
-  tool_panel_section_label: "Similarity Search"
+  tool_panel_section_label: "Gene Prediction"
