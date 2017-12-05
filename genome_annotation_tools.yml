@@ -77,10 +77,6 @@ tools:
   owner: devteam
   tool_panel_section_label: "Visualisation"
 
-- name: jbrowse
-  owner: iuc
-  tool_panel_section_label: "Visualisation"
-
 - name: emboss_5
   owner: devteam
   tool_panel_section_label: "EMBOSS"
@@ -96,10 +92,6 @@ tools:
 - name: data_manager_diamond_database_builder
   owner: bgruening
   tool_panel_section_label: "Similarity Search"
-
-- name: suite_augustus
-  owner: bgruening
-  tool_panel_section_label: "Gene Prediction"
 
 - name: suite_glimmer
   owner: bgruening
