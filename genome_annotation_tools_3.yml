@@ -44,11 +44,3 @@ tools:
 - name: busco
   owner: iuc
   tool_panel_section_label: "Similarity Search"
-
-- name: suite_snap
-  owner: iuc
-  tool_panel_section_label: "Gene Prediction"
-
-- name: suite_maker
-  owner: iuc
-  tool_panel_section_label: "Gene Prediction"
