@@ -16,7 +16,7 @@ before_install:
   - rm -rf /home/travis/perl5/ /home/travis/.phpenv /home/travis/gopath /home/travis/otp /home/travis/.gimme/ /home/travis/.rvm /home/travis/.nvm
   - sudo rm -rf /usr/local/clang*
   - wget https://raw.githubusercontent.com/bgruening/galaxy-flavor-testing/master/Makefile
-  - sed -i 's|\(install-tools.*&&\) \\|\1 rm \-rf /tool-deps/_conda/* \&\& \\|g' Dockerfile
+  - sed -i 's|\(install-tools.*&&\) \\|\1 rm \-rf /tool_deps/_conda/envs/* \&\& \\|g' Dockerfile
   - make docker_install
   - while sleep 9m; do echo "[TRAVIS] Still running..."; done &
   - make docker_build
