@@ -68,7 +68,3 @@ tools:
 - name: clinod
   owner: peterjc
   tool_panel_section_label: "Localisation"
-
-- name: ncbi_blast_plus
-  owner: devteam
-  tool_panel_section_label: "Similarity Search"

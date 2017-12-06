@@ -96,3 +96,7 @@ tools:
 - name: clustalw
   owner: devteam
   tool_panel_section_label: "Clustering"
+
+- name: suite_tripal
+  owner: gga
+  tool_panel_section_label: "Tripal"
