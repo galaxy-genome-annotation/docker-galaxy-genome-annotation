@@ -100,3 +100,15 @@ tools:
 - name: suite_tripal
   owner: gga
   tool_panel_section_label: "Tripal"
+
+- name: suite_askomics
+  owner: gga
+  tool_panel_section_label: "Askomics"
+
+- name: suite_apollo
+  owner: gga
+  tool_panel_section_label: "Apollo"
+
+- name: weblogo3
+  owner: devteam
+  tool_panel_section_label: "Visualisation"

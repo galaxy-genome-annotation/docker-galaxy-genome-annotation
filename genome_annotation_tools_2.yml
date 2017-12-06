@@ -49,24 +49,12 @@ tools:
   owner: crs4
   tool_panel_section_label: "Automatic Annotation"
 
-- name: suite_apollo
-  owner: gga
-  tool_panel_section_label: "Apollo"
-
 - name: jbrowse
   owner: iuc
   tool_panel_section_label: "Visualisation"
 
 - name: jbrowse_to_container
   owner: gga
-  tool_panel_section_label: "Visualisation"
-
-- name: suite_askomics
-  owner: gga
-  tool_panel_section_label: "Askomics"
-
-- name: weblogo3
-  owner: devteam
   tool_panel_section_label: "Visualisation"
 
 - name: emboss_5

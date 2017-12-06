@@ -22,18 +22,29 @@ COPY tool_conf.xml /etc/config/gga_tool_conf.xml
 
 COPY install_tools_wrapper.sh /usr/bin/install-tools
 
-RUN install-tools $GALAXY_ROOT/tools_1.yaml -v && \
+# Split into multiple layers to minimize disk space usage while building
+# Rules to follow:
+#  - Keep in the same yaml file the tools that share common conda dependencies (conda is only able to use hardlinks within a Docker layer)
+#  - Docker will use 2*(size of the layer) on the disk while building, so 1 yaml should not install more data than half of the remaining space on the disk
+#     => 'big' tools should go in the first yaml file, the last yaml file should contain smaller tools
+#  - When one of the layer can't be built with a "no space left" error message, you'll probably need to split a yaml in 2 (supposing you followed the previous rules)
+RUN df -h && \
+    install-tools $GALAXY_ROOT/tools_1.yaml -v && \
     /tool_deps/_conda/bin/conda clean --tarballs --yes > /dev/null && \
-    rm /export/galaxy-central/ -rf
+    rm /export/galaxy-central/ -rf && \
+    df -h
 
-# Split into two layers, it seems that there is a max-layer size.
-RUN install-tools $GALAXY_ROOT/tools_2.yaml -v && \
+RUN df -h && \
+    install-tools $GALAXY_ROOT/tools_2.yaml -v && \
     /tool_deps/_conda/bin/conda clean --tarballs --yes > /dev/null && \
-    rm /export/galaxy-central/ -rf
+    rm /export/galaxy-central/ -rf && \
+    df -h
 
-RUN install-tools $GALAXY_ROOT/tools_3.yaml -v && \
+RUN df -h && \
+    install-tools $GALAXY_ROOT/tools_3.yaml -v && \
     /tool_deps/_conda/bin/conda clean --tarballs --yes > /dev/null && \
-    rm /export/galaxy-central/ -rf
+    rm /export/galaxy-central/ -rf && \
+    df -h
 
 ENV GALAXY_CONFIG_TOOL_CONFIG_FILE /galaxy-central/config/tool_conf.xml.sample,/galaxy-central/config/shed_tool_conf.xml,/etc/config/gga_tool_conf.xml
 # overwrite current welcome page
