@@ -15,7 +15,7 @@ ADD postinst.sh /bin/postinst
 RUN postinst
 
 # Install tools
-COPY genome_annotation_tools.yml $GALAXY_ROOT/tools.yaml
+COPY genome_annotation_tools_1.yml $GALAXY_ROOT/tools.yaml
 COPY genome_annotation_tools_2.yml $GALAXY_ROOT/tools_2.yaml
 COPY genome_annotation_tools_3.yml $GALAXY_ROOT/tools_3.yaml
 COPY tool_conf.xml /etc/config/gga_tool_conf.xml
