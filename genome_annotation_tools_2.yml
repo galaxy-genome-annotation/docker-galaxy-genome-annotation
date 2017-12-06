@@ -68,3 +68,11 @@ tools:
 - name: suite_askomics
   owner: gga
   tool_panel_section_label: "Askomics"
+
+- name: weblogo3
+  owner: devteam
+  tool_panel_section_label: "Visualisation"
+
+- name: emboss_5
+  owner: devteam
+  tool_panel_section_label: "EMBOSS"

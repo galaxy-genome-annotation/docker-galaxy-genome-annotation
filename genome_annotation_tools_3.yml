@@ -41,22 +41,58 @@ galaxy_instance: http://localhost:8080
 install_resolver_dependencies: True
 install_tool_dependencies: False
 tools:
-- name: data_manager_fetch_busco
-  owner: iuc
+- name: blastxml_to_top_descr
+  owner: peterjc
   tool_panel_section_label: "Similarity Search"
 
-- name: busco
-  owner: iuc
+#- name: venn_list
+  #owner: peterjc
+  #tool_panel_section_label: "Visualisation"
+
+- name: mummer
+  owner: peterjc
+  tool_panel_section_label: "Alignments"
+
+- name: mira4_assembler
+  owner: peterjc
+  tool_panel_section_label: "Assembly"
+
+- name: effectivet3
+  owner: peterjc
+  tool_panel_section_label: "Classification"
+
+- name: nlstradamus
+  owner: peterjc
+  tool_panel_section_label: "Classification"
+
+- name: diamond
+  owner: bgruening
   tool_panel_section_label: "Similarity Search"
 
-- name: suite_augustus
+- name: data_manager_diamond_database_builder
+  owner: bgruening
+  tool_panel_section_label: "Similarity Search"
+
+- name: suite_glimmer
   owner: bgruening
   tool_panel_section_label: "Gene Prediction"
 
-- name: suite_snap
-  owner: iuc
-  tool_panel_section_label: "Gene Prediction"
+- name: spades
+  owner: nml
+  tool_panel_section_label: "Assembly"
 
-- name: suite_maker
+- name: rnaspades
   owner: iuc
-  tool_panel_section_label: "Gene Prediction"
+  tool_panel_section_label: "Assembly"
+
+- name: metaspades
+  owner: nml
+  tool_panel_section_label: "Assembly"
+
+- name: cdhit
+  owner: jjohnson
+  tool_panel_section_label: "Clustering"
+
+- name: clustalw
+  owner: devteam
+  tool_panel_section_label: "Clustering"
