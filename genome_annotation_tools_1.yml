@@ -61,10 +61,6 @@ tools:
   owner: iuc
   tool_panel_section_label: "Gene Prediction"
 
-- name: blast_rbh
-  owner: peterjc
-  tool_panel_section_label: "Similarity Search"
-
 - name: clinod
   owner: peterjc
   tool_panel_section_label: "Localisation"
