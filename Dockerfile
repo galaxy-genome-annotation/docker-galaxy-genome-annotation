@@ -1,5 +1,5 @@
 # Galaxy - Genome Annotation Suite
-FROM bgruening/galaxy-sequence-tools:17.05
+FROM bgruening/galaxy-sequence-tools:17.09
 MAINTAINER Galaxy Genome Annotation <gga@galaxians.org>
 
 WORKDIR /galaxy-central
@@ -7,7 +7,6 @@ WORKDIR /galaxy-central
 # install-repository sometimes needs to be forced into updating the repo
 ENV GALAXY_CONFIG_CONDA_AUTO_INSTALL=True \
 	GALAXY_CONFIG_CONDA_AUTO_INIT=True \
-	GALAXY_CONFIG_USE_CACHED_DEPENDENCY_MANAGER=True \
 	ENABLE_TTS_INSTALL=True \
 	GALAXY_CONFIG_BRAND="Genome Annotation"
 
@@ -16,18 +15,34 @@ ADD postinst.sh /bin/postinst
 RUN postinst
 
 # Install tools
-COPY genome_annotation_tools.yml $GALAXY_ROOT/tools.yaml
+COPY genome_annotation_tools_1.yml $GALAXY_ROOT/tools_1.yaml
 COPY genome_annotation_tools_2.yml $GALAXY_ROOT/tools_2.yaml
+COPY genome_annotation_tools_3.yml $GALAXY_ROOT/tools_3.yaml
 COPY tool_conf.xml /etc/config/gga_tool_conf.xml
 
-RUN install-tools $GALAXY_ROOT/tools.yaml && \
+# Split into multiple layers to minimize disk space usage while building
+# Rules to follow:
+#  - Keep in the same yaml file the tools that share common conda dependencies (conda is only able to use hardlinks within a Docker layer)
+#  - Docker will use 2*(size of the layer) on the disk while building, so 1 yaml should not install more data than half of the remaining space on the disk
+#     => 'big' tools should go in the first yaml file, the last yaml file should contain smaller tools
+#  - When one of the layer can't be built with a "no space left" error message, you'll probably need to split a yaml in 2 (supposing you followed the previous rules)
+RUN df -h && \
+    install-tools $GALAXY_ROOT/tools_1.yaml -v && \
     /tool_deps/_conda/bin/conda clean --tarballs --yes > /dev/null && \
-    rm /export/galaxy-central/ -rf
+    rm /export/galaxy-central/ -rf && \
+    df -h
 
-# Split into two layers, it seems that there is a max-layer size.
-RUN install-tools $GALAXY_ROOT/tools_2.yaml && \
+RUN df -h && \
+    install-tools $GALAXY_ROOT/tools_2.yaml -v && \
     /tool_deps/_conda/bin/conda clean --tarballs --yes > /dev/null && \
-    rm /export/galaxy-central/ -rf
+    rm /export/galaxy-central/ -rf && \
+    df -h
+
+RUN df -h && \
+    install-tools $GALAXY_ROOT/tools_3.yaml -v && \
+    /tool_deps/_conda/bin/conda clean --tarballs --yes > /dev/null && \
+    rm /export/galaxy-central/ -rf && \
+    df -h
 
 ENV GALAXY_CONFIG_TOOL_CONFIG_FILE /galaxy-central/config/tool_conf.xml.sample,/galaxy-central/config/shed_tool_conf.xml,/etc/config/gga_tool_conf.xml
 # overwrite current welcome page
