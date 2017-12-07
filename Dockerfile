@@ -20,8 +20,6 @@ COPY genome_annotation_tools_2.yml $GALAXY_ROOT/tools_2.yaml
 COPY genome_annotation_tools_3.yml $GALAXY_ROOT/tools_3.yaml
 COPY tool_conf.xml /etc/config/gga_tool_conf.xml
 
-COPY install_tools_wrapper.sh /usr/bin/install-tools
-
 # Split into multiple layers to minimize disk space usage while building
 # Rules to follow:
 #  - Keep in the same yaml file the tools that share common conda dependencies (conda is only able to use hardlinks within a Docker layer)
