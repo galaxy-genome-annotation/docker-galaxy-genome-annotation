@@ -1,5 +1,5 @@
 # Galaxy - Genome Annotation Suite
-FROM bgruening/galaxy-sequence-tools:17.09
+FROM bgruening/galaxy-stable:17.09
 MAINTAINER Galaxy Genome Annotation <gga@galaxians.org>
 
 WORKDIR /galaxy-central
@@ -8,7 +8,7 @@ WORKDIR /galaxy-central
 ENV GALAXY_CONFIG_CONDA_AUTO_INSTALL=True \
 	GALAXY_CONFIG_CONDA_AUTO_INIT=True \
 	ENABLE_TTS_INSTALL=True \
-	GALAXY_CONFIG_BRAND="Genome Annotation"
+	GALAXY_CONFIG_BRAND="Genome Annotation GMOD"
 
 # Install required python packages before installing tools from toolshed
 ADD postinst.sh /bin/postinst
@@ -16,8 +16,6 @@ RUN postinst
 
 # Install tools
 COPY genome_annotation_tools_1.yml $GALAXY_ROOT/tools_1.yaml
-COPY genome_annotation_tools_2.yml $GALAXY_ROOT/tools_2.yaml
-COPY genome_annotation_tools_3.yml $GALAXY_ROOT/tools_3.yaml
 COPY tool_conf.xml /etc/config/gga_tool_conf.xml
 
 # Split into multiple layers to minimize disk space usage while building
@@ -28,18 +26,6 @@ COPY tool_conf.xml /etc/config/gga_tool_conf.xml
 #  - When one of the layer can't be built with a "no space left" error message, you'll probably need to split a yaml in 2 (supposing you followed the previous rules)
 RUN df -h && \
     install-tools $GALAXY_ROOT/tools_1.yaml -v && \
-    /tool_deps/_conda/bin/conda clean --tarballs --yes > /dev/null && \
-    rm /export/galaxy-central/ -rf && \
-    df -h
-
-RUN df -h && \
-    install-tools $GALAXY_ROOT/tools_2.yaml -v && \
-    /tool_deps/_conda/bin/conda clean --tarballs --yes > /dev/null && \
-    rm /export/galaxy-central/ -rf && \
-    df -h
-
-RUN df -h && \
-    install-tools $GALAXY_ROOT/tools_3.yaml -v && \
     /tool_deps/_conda/bin/conda clean --tarballs --yes > /dev/null && \
     rm /export/galaxy-central/ -rf && \
     df -h
