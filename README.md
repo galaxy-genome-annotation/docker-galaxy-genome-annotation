@@ -58,7 +58,7 @@ You must have [docker installed](https://docs.docker.com/installation/). Once th
 docker run -d -p 8080:80 quay.io/galaxy/genome-annotation
 ```
 
-If you only need the anotation / Visualization tools listed above, you can use a lighter Docker image:
+If you only need the Annotation / Visualization tools listed above, you can use a lighter Docker image:
 
 ```bash
 docker run -d -p 8080:80 quay.io/galaxy/genome-annotation:gmod
