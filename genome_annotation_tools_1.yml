@@ -47,18 +47,27 @@ tools:
 
 - name: busco
   owner: iuc
+  install_resolver_dependencies: False
   tool_panel_section_label: "Similarity Search"
 
+- name: augustus
+  owner: bgruening
+  tool_panel_section_label: "Gene Prediction"
+
+# The augustus suite installs augustus_training which depends on the huge maker package
 - name: suite_augustus
   owner: bgruening
+  install_resolver_dependencies: False
   tool_panel_section_label: "Gene Prediction"
 
 - name: suite_snap
   owner: iuc
+  install_resolver_dependencies: False
   tool_panel_section_label: "Gene Prediction"
 
 - name: suite_maker
   owner: iuc
+  install_resolver_dependencies: False
   tool_panel_section_label: "Gene Prediction"
 
 - name: clinod

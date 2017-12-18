@@ -47,6 +47,7 @@ tools:
 
 - name: prokka
   owner: crs4
+  install_resolver_dependencies: False
   tool_panel_section_label: "Automatic Annotation"
 
 - name: jbrowse
