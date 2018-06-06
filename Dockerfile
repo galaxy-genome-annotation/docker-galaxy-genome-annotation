@@ -1,5 +1,5 @@
 # Galaxy - Genome Annotation Suite
-FROM bgruening/galaxy-sequence-tools:17.09
+FROM quay.io/bgruening/galaxy:18.05
 MAINTAINER Galaxy Genome Annotation <gga@galaxians.org>
 
 WORKDIR /galaxy-central
@@ -44,7 +44,7 @@ RUN df -h && \
     rm /export/galaxy-central/ -rf && \
     df -h
 
-ENV GALAXY_CONFIG_TOOL_CONFIG_FILE /galaxy-central/config/tool_conf.xml.sample,/galaxy-central/config/shed_tool_conf.xml,/etc/config/gga_tool_conf.xml
+ENV GALAXY_CONFIG_TOOL_CONFIG_FILE config/tool_conf.xml.sample,config/shed_tool_conf.xml,/etc/config/gga_tool_conf.xml
 # overwrite current welcome page
 ADD welcome.html $GALAXY_CONFIG_DIR/web/welcome.html
 
