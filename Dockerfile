@@ -1,5 +1,5 @@
 # Galaxy - Genome Annotation Suite
-FROM bgruening/galaxy-stable:17.09
+FROM quay.io/bgruening/galaxy:18.05
 MAINTAINER Galaxy Genome Annotation <gga@galaxians.org>
 
 WORKDIR /galaxy-central
@@ -24,13 +24,10 @@ COPY tool_conf.xml /etc/config/gga_tool_conf.xml
 #  - Docker will use 2*(size of the layer) on the disk while building, so 1 yaml should not install more data than half of the remaining space on the disk
 #     => 'big' tools should go in the first yaml file, the last yaml file should contain smaller tools
 #  - When one of the layer can't be built with a "no space left" error message, you'll probably need to split a yaml in 2 (supposing you followed the previous rules)
-RUN df -h && \
-    install-tools $GALAXY_ROOT/tools_1.yaml -v && \
-    /tool_deps/_conda/bin/conda clean --tarballs --yes > /dev/null && \
-    rm /export/galaxy-central/ -rf && \
-    df -h
+RUN install-tools $GALAXY_ROOT/tools_1.yaml -v && \
+    /tool_deps/_conda/bin/conda clean --tarballs --yes > /dev/null
 
-ENV GALAXY_CONFIG_TOOL_CONFIG_FILE /galaxy-central/config/tool_conf.xml.sample,/galaxy-central/config/shed_tool_conf.xml,/etc/config/gga_tool_conf.xml
+ENV GALAXY_CONFIG_TOOL_CONFIG_FILE config/tool_conf.xml.sample,config/shed_tool_conf.xml,/etc/config/gga_tool_conf.xml
 # overwrite current welcome page
 ADD welcome.html $GALAXY_CONFIG_DIR/web/welcome.html
 
