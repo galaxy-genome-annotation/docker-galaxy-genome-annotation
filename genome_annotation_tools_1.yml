@@ -60,3 +60,7 @@ tools:
 - name: suite_apollo
   owner: gga
   tool_panel_section_label: "Apollo"
+
+- name: suite_chado
+  owner: gga
+  tool_panel_section_label: "Chado"
