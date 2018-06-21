@@ -116,3 +116,7 @@ tools:
 - name: weblogo3
   owner: devteam
   tool_panel_section_label: "Visualisation"
+
+- name: suite_chado
+  owner: gga
+  tool_panel_section_label: "Chado"
