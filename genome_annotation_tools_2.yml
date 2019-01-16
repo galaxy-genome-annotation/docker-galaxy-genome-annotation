@@ -64,4 +64,5 @@ tools:
 
 - name: ncbi_blast_plus
   owner: devteam
+  install_resolver_dependencies: False
   tool_panel_section_label: "Similarity Search"
