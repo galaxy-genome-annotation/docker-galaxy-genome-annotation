@@ -43,6 +43,7 @@ install_tool_dependencies: False
 tools:
 - name: blast_rbh
   owner: peterjc
+  install_resolver_dependencies: False
   tool_panel_section_label: "Similarity Search"
 
 - name: blastxml_to_top_descr
@@ -71,10 +72,12 @@ tools:
 
 - name: diamond
   owner: bgruening
+  install_resolver_dependencies: False
   tool_panel_section_label: "Similarity Search"
 
 - name: data_manager_diamond_database_builder
   owner: bgruening
+  install_resolver_dependencies: False
   tool_panel_section_label: "Similarity Search"
 
 - name: suite_glimmer
@@ -94,7 +97,7 @@ tools:
   tool_panel_section_label: "Assembly"
 
 - name: cdhit
-  owner: jjohnson
+  owner: bebatut
   tool_panel_section_label: "Clustering"
 
 - name: clustalw
@@ -115,6 +118,7 @@ tools:
 
 - name: weblogo3
   owner: devteam
+  install_resolver_dependencies: False
   tool_panel_section_label: "Visualisation"
 
 - name: suite_chado
