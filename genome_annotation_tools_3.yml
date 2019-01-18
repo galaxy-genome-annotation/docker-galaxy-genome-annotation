@@ -96,8 +96,8 @@ tools:
   owner: nml
   tool_panel_section_label: "Assembly"
 
-- name: cdhit
-  owner: bebatut
+- name: cd_hit
+  owner: iuc
   tool_panel_section_label: "Clustering"
 
 - name: clustalw
