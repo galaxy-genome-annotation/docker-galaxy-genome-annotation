@@ -97,7 +97,7 @@ tools:
   tool_panel_section_label: "Assembly"
 
 - name: cdhit
-  owner: jjohnson
+  owner: bebatut
   tool_panel_section_label: "Clustering"
 
 - name: clustalw
