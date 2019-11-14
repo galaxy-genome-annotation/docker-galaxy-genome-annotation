@@ -1,5 +1,5 @@
 # Galaxy - Genome Annotation Suite
-FROM quay.io/bgruening/galaxy:19.05
+FROM quay.io/bgruening/galaxy:19.05.1
 MAINTAINER Galaxy Genome Annotation <gga@galaxians.org>
 
 WORKDIR /galaxy-central
