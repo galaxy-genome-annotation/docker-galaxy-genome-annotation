@@ -1,12 +1,12 @@
 sudo: required
 language: minimal
-python: 2.7
+python: 3.5
 
 services:
   - docker
 
 env:
-  - TOX_ENV=py27
+  - TOX_ENV=py35
 
 git:
   submodules: false
