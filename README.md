@@ -93,7 +93,7 @@ ENV                           | Use
 ## Users & Passwords
 
 The Galaxy Admin User has the username ``admin@galaxy.org`` and the password
-``admin``. If you want to create new users, please make sure to use the ``/export/`` volume, otherwise all data will be removed whenever the container is restarted.
+``password``. If you want to create new users, please make sure to use the ``/export/`` volume, otherwise all data will be removed whenever the container is restarted.
 
 
 ## Reproducibility of Your Search Results
