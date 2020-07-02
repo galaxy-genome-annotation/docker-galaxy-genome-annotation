@@ -58,10 +58,12 @@ tools:
 
 - name: mummer
   owner: peterjc
+  install_repository_dependencies: False
   tool_panel_section_label: "Alignments"
 
 - name: mira4_assembler
   owner: peterjc
+  install_repository_dependencies: False
   tool_panel_section_label: "Assembly"
 
 - name: effectivet3
