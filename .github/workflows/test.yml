@@ -15,8 +15,6 @@ jobs:
           wget https://raw.githubusercontent.com/bgruening/galaxy-flavor-testing/master/Makefile
           # As Travis VM is limited to 30Go, we remove all conda envs once they are installed successfully to free some disk space (see #23)
           sed -i 's|\(install-tools.*&&\) \\|\1 rm \-rf /tool_deps/_conda/envs/* \&\& \\|g' Dockerfile
-      - name: Install Docker
-        run: make docker_install
       - name: Build Docker image
         run: make docker_build
       - name: Run the newly built Docker image
