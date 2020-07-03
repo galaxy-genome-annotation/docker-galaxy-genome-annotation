@@ -10,6 +10,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
       - name: Install test script
         run: |
           wget https://raw.githubusercontent.com/bgruening/galaxy-flavor-testing/master/Makefile
@@ -20,7 +23,6 @@ jobs:
       - name: Run the newly built Docker image
         run: |
           make docker_run
-          sleep 300
       - name: Check API availability
         run: make test_api
       - name: Run FTP tests
