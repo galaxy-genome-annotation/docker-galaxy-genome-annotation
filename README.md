@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/galaxy-genome-annotation/docker-galaxy-genome-annotation.svg?branch=master)](https://travis-ci.org/galaxy-genome-annotation/docker-galaxy-genome-annotation)
+![Test Docker image building](https://github.com/galaxy-genome-annotation/docker-galaxy-genome-annotation/workflows/Test%20Docker%20image%20building/badge.svg)
 [![Docker Repository on Quay](https://quay.io/repository/galaxy-genome-annotation/docker-galaxy-annotation/status "Docker Repository on Quay")](https://quay.io/repository/galaxy-genome-annotation/docker-galaxy-annotation)
 
 # Galaxy Image for Genome Annotation
