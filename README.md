@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/galaxy-genome-annotation/docker-galaxy-genome-annotation.svg?branch=master)](https://travis-ci.org/galaxy-genome-annotation/docker-galaxy-genome-annotation)
+![Test Docker image building](https://github.com/galaxy-genome-annotation/docker-galaxy-genome-annotation/workflows/Test%20Docker%20image%20building/badge.svg)
 [![Docker Repository on Quay](https://quay.io/repository/galaxy-genome-annotation/docker-galaxy-annotation/status "Docker Repository on Quay")](https://quay.io/repository/galaxy-genome-annotation/docker-galaxy-annotation)
 
 # Galaxy Image for Genome Annotation
@@ -93,7 +93,7 @@ ENV                           | Use
 ## Users & Passwords
 
 The Galaxy Admin User has the username ``admin@galaxy.org`` and the password
-``admin``. If you want to create new users, please make sure to use the ``/export/`` volume, otherwise all data will be removed whenever the container is restarted.
+``password``. If you want to create new users, please make sure to use the ``/export/`` volume, otherwise all data will be removed whenever the container is restarted.
 
 
 ## Reproducibility of Your Search Results

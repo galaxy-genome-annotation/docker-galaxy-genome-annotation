@@ -36,7 +36,7 @@
 #  * install_repository_dependencies: True or False - whether to install repo
 #                               dependencies or not. (default: True)
 
-api_key: admin
+api_key: fakekey
 galaxy_instance: http://localhost:8080
 install_resolver_dependencies: True
 install_tool_dependencies: False
@@ -44,10 +44,12 @@ tools:
 - name: blast_rbh
   owner: peterjc
   install_resolver_dependencies: False
+  install_repository_dependencies: False
   tool_panel_section_label: "Similarity Search"
 
 - name: blastxml_to_top_descr
   owner: peterjc
+  install_repository_dependencies: False
   tool_panel_section_label: "Similarity Search"
 
 #- name: venn_list
@@ -56,10 +58,12 @@ tools:
 
 - name: mummer
   owner: peterjc
+  install_repository_dependencies: False
   tool_panel_section_label: "Alignments"
 
 - name: mira4_assembler
   owner: peterjc
+  install_repository_dependencies: False
   tool_panel_section_label: "Assembly"
 
 - name: effectivet3
