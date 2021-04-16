@@ -25,8 +25,9 @@ jobs:
           make docker_run
       - name: Check API availability
         run: make test_api
-      - name: Run FTP tests
-        run: make test_ftp
+      # FIXME passive mode does not work, it would require the container to run with --net=host
+      #- name: Run FTP tests
+      #  run: make test_ftp
       - name: Install Bioblend
         run: make install
       - name: Run Bioblend tests
