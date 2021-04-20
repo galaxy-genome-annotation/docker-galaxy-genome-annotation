@@ -3,6 +3,7 @@ name: Test Docker image building
 on: [push, pull_request]
 env:
   TOX_ENV: py37
+  GALAXY_VERSION: release_20.09
 
 jobs:
   build:
